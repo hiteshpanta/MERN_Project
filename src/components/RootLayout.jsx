@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router'
 import Header from './Header'
+import Footer from './Footer'
 
 export default function RootLayout() {
   return (
@@ -11,6 +12,8 @@ export default function RootLayout() {
       <main className='p-5 bg-amber-50'>
         <Outlet />
       </main>
+
+      <Footer />
 
 
     </>

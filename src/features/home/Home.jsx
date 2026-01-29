@@ -48,8 +48,9 @@ export default function Home() {
 
 
       <main className="grow">
-        <h1>Welcome To Shop Online</h1>
-        <Top5Product />
+        <h1 className="flex justify-center">Welcome To Shop Online</h1>
+        
+        
 
         <Formik
           initialValues={{
@@ -62,17 +63,21 @@ export default function Home() {
         >
           {({ handleChange, handleSubmit, values, touched, errors }) => (
             <form onSubmit={handleSubmit} className="mt-4 mb-4 max-w-sm">
-              <div className="flex gap-5">
+              <div className="flex gap-5 justify-end bg-amber-200 p-2 shadow-sm ">
                 <Input
                   value={values.search}
                   onChange={handleChange}
-                  name="search" placeholder="Search" />
-                <Button>Search</Button>
+                  name="search" placeholder="Search" 
+                />
+                <Button className={"bg-transparent"}>Search</Button>
               </div>
 
             </form>
           )}
         </Formik>
+        {/* <div className="mt-50 mb-10">
+          <Top5Product />
+        </div> */}
 
 
 

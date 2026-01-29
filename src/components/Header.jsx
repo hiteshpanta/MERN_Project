@@ -7,7 +7,7 @@ export default function Header() {
   const { user } = useSelector((state) => state.userSlice);
 
   return (
-    <div className="bg-gray-200 px-5 flex justify-between  items-end py-2">
+    <div className="bg-amber-100 text-amber-700 px-5 flex justify-between  items-end py-2">
       <h1 className="text-[30px] font-bold ">Luxora</h1>
 
 
