@@ -18,6 +18,21 @@ export const getUser = async (req, res) => {
   }
 }
 
+export const getUsers = async (req, res) => {
+  try {
+    const user = await User.find().select('-password');
+    return res.status(200).json({
+      status: 'success',
+      user
+    });
+  } catch (err) {
+    return res.status(500).json({
+      status: 'error',
+      message: err.message
+    });
+  }
+}
+
 export const updateProfile = async (req, res) => {
   const { email, username } = req.body ?? {};
   try {

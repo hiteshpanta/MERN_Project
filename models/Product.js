@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-export const categories = ['food', 'clothes', 'tech', 'jewellrey', 'fashion','luxury', 'other'];
-export const brands = ['addidas', 'samsung', 'tanishq', 'kfc', 'iphone','other'];
+export const categories = ['chair', 'sofa', 'bed', 'table', 'other'];
+export const brands = ['other'];
 
 const productSchema = new mongoose.Schema({
   title: {

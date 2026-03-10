@@ -2,10 +2,13 @@ import express from 'express';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
+import blogRoutes from './routes/blogRoutes.js';
 import mongoose from 'mongoose';
 import fileUpload from 'express-fileupload';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import path from 'path'
+
 const app = express();
 const port = 5000;
 
@@ -30,6 +33,8 @@ app.use(fileUpload({
   limits: { fileSize: 5 * 1024 * 1024 },
 }));
 
+// app.use('/uploads' ,express.static(path.join(process.cwd(),'uploads')));
+
 app.use(express.static('uploads'));
 
 
@@ -47,6 +52,7 @@ app.get('/', (req, res) => {
 app.use(userRoutes);
 app.use(productRoutes);
 app.use(orderRoutes);
+app.use(blogRoutes);
 
 
 
